@@ -13,7 +13,7 @@ import java.nio.channels.FileChannel;
 @Slf4j
 public class TestByteBuffer {
     public static void main(String[] args) {
-        try (FileChannel channel = new FileInputStream("data.txt").getChannel()) {
+        try (FileChannel channel = new FileInputStream("text/data.txt").getChannel()) {
             while (true) {
                 ByteBuffer buffer = ByteBuffer.allocate(10);
                 int read = channel.read(buffer);
