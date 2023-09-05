@@ -14,6 +14,7 @@ public class TestFileChannelTransferTo {
                 FileChannel from = new FileInputStream("text/data.txt").getChannel();
                 FileChannel to = new FileOutputStream("text/to.txt").getChannel()
         ) {
+            // 效率高，底层会使用操作系统的零拷贝进行优化
             from.transferTo(0, from.size(), to);
         } catch (IOException e) {
             e.printStackTrace();
